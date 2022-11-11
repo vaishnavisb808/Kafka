@@ -1,1 +1,7 @@
-Hi, this is a sample
+Hi,
+Here iam added basic bin scripts for running kafka.
+/bin/zookeeper-server-start.sh- to start the zookeeper
+/bin/kafka-server-start.sh - to start server
+/bin/kafka-topics.sh - for creating a topic
+/bin/kafka-console-consumer.sh - for consumer
+
