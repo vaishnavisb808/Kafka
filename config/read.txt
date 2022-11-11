@@ -1,1 +1,5 @@
-oi
+Hey,
+here iam adding the config files that apache kafka providing. i have added almost all config file because iam not that much aware of which when all these config files use. Some of the important config files that we regularly using is
+/config/zookeeper.properties
+/config/server-0.properties (Note: initially we only have the server.properties file in config, for running multuple kafka borkers we can rename this with
+server-0.properties -for first server/server-1.properties - for second server/ and so on.
