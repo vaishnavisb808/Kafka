@@ -18,7 +18,7 @@ public class SimpleProducer {
         logger.info("Creating Kafka Producer...");
         Properties props = new Properties();
         props.put(ProducerConfig.CLIENT_ID_CONFIG, "Simple?Producer"); //Client identifier.Type: string
-        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9093") //Initial list of brokers as a CSV list of broker host or host:port.
+        props.put(ProducerConfig.BOOTSTRAP_SERVERS_CONFIG, "localhost:9092,localhost:9093"); //Initial list of brokers as a CSV list of broker host or host:port.
         props.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer.class.getName());
         props.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer.class.getName());
 
@@ -26,7 +26,7 @@ public class SimpleProducer {
 
         logger.info("Start sending messages...");
         for (int i = 1; i <= 10; i++) {
-            producer.send(new ProducerRecord<>(AppConfigs.topicName, i, "Simple Message-" + i));
+            producer.send(new ProducerRecord<>("simple-producer", i, "Simple Message-" + i));
         }
 
         logger.info("Finished - Closing Kafka Producer.");
