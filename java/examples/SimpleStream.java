@@ -13,19 +13,19 @@ import java.util.Properties;
 
 public class SimpleStream {
     public static final Logger logger= LogManager.getLogger();
-  
+
 //Stream processing application mainly have 4 steps
-  //1. configure the properies
-  //2. create topology - TOPOLOGY is a directed acyclic graph of stream processing nodes that represents the stream processing logic of 
-        //a Kafka Streams application
-  //3. start kafka streams
-  //4. close the streams
-  
+    //1. configure the properies
+    //2. create topology - TOPOLOGY is a directed acyclic graph of stream processing nodes that represents the stream processing logic of
+    //a Kafka Streams application
+    //3. start kafka streams
+    //4. close the streams
+
     public static void main(String[] args) {
         Properties props=new Properties();
         props.put(StreamsConfig.APPLICATION_ID_CONFIG,"SimpleStream");
-        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9092,localhost:9093);
-        props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.Integer().getClass()); //serdes- both serializer and deserilizer
+        props.put(StreamsConfig.BOOTSTRAP_SERVERS_CONFIG,"localhost:9092,localhost:9093");
+                props.put(StreamsConfig.DEFAULT_KEY_SERDE_CLASS_CONFIG, Serdes.Integer().getClass()); //serdes- both serializer and deserilizer
         props.put(StreamsConfig.DEFAULT_VALUE_SERDE_CLASS_CONFIG, Serdes.String().getClass());
 
         StreamsBuilder streamsBuilder=new StreamsBuilder();
